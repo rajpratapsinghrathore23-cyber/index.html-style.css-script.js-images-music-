@@ -28,7 +28,7 @@ function moveNoButton(e) {
 
   noAttempts++;
 
-  if (noAttempts >= 2) {
+  if (noAttempts >= 5) {
     noMessage.textContent = "Babuuu, NO option available hi nahi hai 😂💗";
   } else {
     noMessage.textContent = "Hehe... pakad ke dikhao 😏💗";

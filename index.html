@@ -1,34 +1,169 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>My Babyygurlll 💗</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Babyygurlll 💗 | From Betuu</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-<h1>🎂 Happy Birthday My Babyygurlll 💗</h1>
-<p class="msg">
-14 September 💖<br><br>
-I luvvv uhhhh babuuuu 💗<br>
-Thank you for all the beautiful memories, smiles, support and happiness.
-You make every day special and every memory unforgettable.
-</p>
 
-<div class="gallery">
-<img src="photo1.jpeg">
-<img src="photo2.jpeg">
-<img src="photo3.jpeg">
-<img src="photo4.jpeg">
-<img src="photo5.jpeg">
-</div>
+  <div id="hearts"></div>
 
-<button id="noBtn">No 😜</button>
-<button onclick="window.location.href='surprise.html'">
-    Yes 💖
-</button>
-</div>
-<script src="script.js"></script>
+  <main id="app">
+
+    <!-- PAGE 1 -->
+    <section class="page active" id="welcome">
+      <div class="glass">
+        <div class="cake">🎂</div>
+        <p class="small">A little surprise made with love</p>
+        <h1>Happy Birthday<br><span>My Babyygurlll 💗</span></h1>
+        <p class="subtitle">I made something special just for you...</p>
+        <button class="primary" onclick="nextPage()">Open Your Gift 🎁</button>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page" id="question">
+      <div class="glass">
+        <div class="emoji">💌</div>
+        <p class="small">Before we continue...</p>
+        <h2>Will You Accept<br>My Gift? ❤️</h2>
+
+        <div class="buttons">
+          <button class="yes primary" onclick="acceptGift()">YES 💗</button>
+          <button class="no" id="noBtn">NO 😏</button>
+        </div>
+
+        <p id="noMessage"></p>
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page" id="letter">
+      <div class="letter-card">
+        <div class="envelope">💌</div>
+        <h2>Dear My Babyygurlll 💗</h2>
+        <p>
+          Happy Birthday to the girl who makes ordinary days feel a little
+          more special. Every memory, every laugh and every little moment
+          together is something I treasure.
+        </p>
+        <p>
+          I hope this new year of your life brings you countless reasons to
+          smile, beautiful memories and everything your heart wishes for.
+        </p>
+        <p class="love-line">I luvvv uhhhh babuuuu ❤️</p>
+        <button class="primary" onclick="nextPage()">A Little More 🌹</button>
+      </div>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page" id="roses">
+      <div class="glass">
+        <div class="roses">🌹🌹🌹</div>
+        <h2>Fresh Roses For You 🌹</h2>
+        <p>These flowers may fade,<br>but the memories we make stay special.</p>
+        <div class="rose-big">🌹</div>
+        <p class="love-line">I luvvv uhhhh babuuuu 💗</p>
+        <button class="primary" onclick="nextPage()">One More Surprise 🎁</button>
+      </div>
+    </section>
+
+    <!-- PAGE 5 -->
+    <section class="page" id="surprise">
+      <div class="glass">
+        <h2>🎁 A Special Surprise</h2>
+        <p>Tap the gift box to open it!</p>
+
+        <button class="gift-box" id="giftBox" onclick="openGift()">
+          <span>🎁</span>
+        </button>
+
+        <div class="surprise-content" id="surpriseContent">
+          <img src="images/couple1.png" alt="Our memory">
+          <p>Out of all the gifts in this world,<br>having beautiful memories with you is my favorite one. 💗</p>
+          <p class="love-line">I luvvv uhhhh babuuuu ❤️</p>
+          <button class="primary" onclick="nextPage()">Our Memories 📸</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6 -->
+    <section class="page" id="memories">
+      <div class="glass wide">
+        <h2>✨ Our Memories ✨</h2>
+        <p class="subtitle">Two little snapshots, countless memories.</p>
+
+        <div class="gallery">
+          <div class="memory">
+            <img src="images/couple1.png" alt="Memory 1">
+            <span>💗 A beautiful moment</span>
+          </div>
+          <div class="memory">
+            <img src="images/couple2.png" alt="Memory 2">
+            <span>✨ Another favorite</span>
+          </div>
+        </div>
+
+        <button class="primary" onclick="nextPage()">Reasons Why 💗</button>
+      </div>
+    </section>
+
+    <!-- PAGE 7 -->
+    <section class="page" id="reasons">
+      <div class="glass wide">
+        <h2>Reasons Why 💗</h2>
+        <div class="reason-grid">
+          <div class="reason">❤️<b>Your Smile</b><small>It makes every moment brighter.</small></div>
+          <div class="reason">🫶<b>Your Care</b><small>The little things always matter.</small></div>
+          <div class="reason">😊<b>Your Cute Anger</b><small>Even your tiny moods are memorable.</small></div>
+          <div class="reason">✨<b>Everything About You</b><small>Simply because you're you.</small></div>
+        </div>
+        <button class="primary" onclick="nextPage()">Countdown ⏳</button>
+      </div>
+    </section>
+
+    <!-- PAGE 8 -->
+    <section class="page" id="countdown">
+      <div class="glass">
+        <div class="emoji">⏳</div>
+        <h2>14 September ❤️</h2>
+        <p>Every second with you<br>is a favorite memory.</p>
+        <div class="timer">
+          <div><b id="days">00</b><span>Days</span></div>
+          <div><b id="hours">00</b><span>Hours</span></div>
+          <div><b id="minutes">00</b><span>Minutes</span></div>
+          <div><b id="seconds">00</b><span>Seconds</span></div>
+        </div>
+        <button class="primary" onclick="nextPage()">Final Surprise ✨</button>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="page" id="final">
+      <div class="glass">
+        <div class="sparkle">✨💗✨</div>
+        <h1>Happy Birthday<br><span>My Babyygurlll 💗</span></h1>
+        <p>
+          Thank you for being a beautiful part of my memories
+          and for making ordinary moments feel special.
+        </p>
+        <p class="signature">Forever Yours,<br><b>Betuu ❤️</b></p>
+        <div class="final-love">I luvvv uhhhh babuuuu ♾️💗</div>
+        <div class="photo-final">
+          <img src="images/couple2.png" alt="Birthday memory">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Optional music: put your own music file at music/song.mp3 -->
+  <audio id="bgMusic" loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
 </body>
 </html>
